@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockchain Voting System</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.ethers.io/lib/ethers-6.7.0.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🗳️ Blockchain Voting System</h1>
+            <p>Secure, transparent, and decentralized voting</p>
+        </header>
+
+        <div class="connection-section">
+            <button id="connectWallet" class="btn btn-primary">Connect Wallet</button>
+            <div id="walletInfo" class="wallet-info hidden">
+                <p>Connected: <span id="walletAddress"></span></p>
+            </div>
+        </div>
+
+        <div id="votingInterface" class="voting-interface hidden">
+            <div class="admin-section">
+                <h2>Admin Controls</h2>
+                <div class="admin-controls">
+                    <button id="startVoting" class="btn btn-success">Start Voting</button>
+                    <button id="endVoting" class="btn btn-danger">End Voting</button>
+                    <div class="add-candidate">
+                        <input type="text" id="candidateName" placeholder="Enter candidate name">
+                        <button id="addCandidate" class="btn btn-secondary">Add Candidate</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="voting-section">
+                <h2>Cast Your Vote</h2>
+                <div id="votingStatus" class="status"></div>
+                <div id="candidatesList" class="candidates-list"></div>
+            </div>
+
+            <div class="results-section">
+                <h2>Results</h2>
+                <div id="totalVotes" class="total-votes"></div>
+                <div id="winner" class="winner"></div>
+                <div id="results" class="results"></div>
+            </div>
+        </div>
+
+        <div class="loading hidden" id="loading">
+            <div class="spinner"></div>
+            <p>Processing transaction...</p>
+        </div>
+    </div>
+
+    <script src="src/app.js"></script>
+</body>
+</html>
